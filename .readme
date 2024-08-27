@@ -1,0 +1,66 @@
+# Proyecto de Automatización de Pruebas con Cypress
+
+## Descripción
+
+Este proyecto está enfocado en la automatización de pruebas para un sitio web utilizando Cypress. Incluye pruebas funcionales para la validación de formularios de contacto, reservas de habitaciones y verificaciones de la interfaz de usuario.
+
+## Estructura del Proyecto
+
+- **`cypress/`**
+: Carpeta principal de Cypress que contiene archivos de prueba y configuraciones.
+  - **`e2e/`**
+:
+    - **`testclase6.cy.js`**
+: Archivo con pruebas para reserva de habitaciones y formulario de contacto.
+    - **`pruebasdebug.cy.js`**
+: Archivo para pruebas adicionales y depuración.
+  - **`support/`**
+:
+    - **`commands.js`**
+: Archivo con comandos personalizados para pruebas.
+    - **`index.js`**
+: Archivo de soporte para configuración de Cypress.
+  - **`fixtures/`**
+:
+    - **`errorMessages.json`**
+: Archivo con mensajes de error para validaciones del formulario.
+
+## Comandos Personalizados
+
+- **`completarFormularioContacto(nombre, email, telefono, asunto, mensaje)`**
+: Completa el formulario de contacto con los datos proporcionados.
+- **`enviarFormularioContacto()`**
+: Envía el formulario de contacto.
+- **`verificarMensaje(selector, mensajeEsperado)`**
+: Verifica que un mensaje específico esté visible.
+- **`hacerReservaHabitacion(nombre, apellido, email, telefono)`**
+: Realiza una reserva de habitación y maneja la lógica de fechas no disponibles.
+
+## Pruebas Realizadas
+
+### Pruebas de Formulario de Contacto
+
+- **Formulario de contacto exitoso**
+: Verifica que el formulario se complete y envíe correctamente.
+- **Errores en el formulario**
+: Verifica que los mensajes de error se muestren para datos inválidos.
+
+### Pruebas de Reserva de Habitación
+
+- **Reserva exitosa**
+: Verifica que el proceso de reserva funcione con datos válidos.
+- **Errores en la reserva**
+:
+  - **Nombre con caracteres alfanuméricos**
+: Verifica que el campo Nombre no acepte caracteres alfanuméricos.
+  - **Apellido con caracteres alfanuméricos**
+: Verifica que el campo Apellido no acepte caracteres alfanuméricos.
+  - **Teléfono con caracteres alfabéticos**
+: Verifica que el campo Teléfono no acepte caracteres alfabéticos.
+
+## Configuración de Cypress
+
+1. **Instalar dependencias**
+
+npm install cypress
+npm install cypress-real-events @4tw/cypress-drag-drop

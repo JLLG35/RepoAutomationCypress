@@ -1,0 +1,13 @@
+
+{
+  "formErrors": {
+    "nameBlank": "Name may not be blank",
+    "emailBlank": "Email may not be blank",
+    "phoneBlank": "Phone may not be blank",
+    "subjectBlank": "Subject may not be blank",
+    "messageBlank": "Message may not be blank",
+    "invalidEmailFormat": "debe ser una dirección de correo electrónico con formato correcto",
+    "phoneLength": "Phone must be between 11 and 21 characters.",
+    "messageLength": "Message must be between 20 and 2000 characters."
+  }
+}
