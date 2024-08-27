@@ -1,66 +1,177 @@
 # Proyecto de Automatización de Pruebas con Cypress
 
-## Descripción
+## 🎯 Descripción
 
 Este proyecto está enfocado en la automatización de pruebas para un sitio web utilizando Cypress. Incluye pruebas funcionales para la validación de formularios de contacto, reservas de habitaciones y verificaciones de la interfaz de usuario.
 
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
-- **`cypress/`**
-: Carpeta principal de Cypress que contiene archivos de prueba y configuraciones.
-  - **`e2e/`**
-:
-    - **`testclase6.cy.js`**
-: Archivo con pruebas para reserva de habitaciones y formulario de contacto.
-    - **`pruebasdebug.cy.js`**
-: Archivo para pruebas adicionales y depuración.
-  - **`support/`**
-:
-    - **`commands.js`**
-: Archivo con comandos personalizados para pruebas.
-    - **`index.js`**
-: Archivo de soporte para configuración de Cypress.
-  - **`fixtures/`**
-:
-    - **`errorMessages.json`**
-: Archivo con mensajes de error para validaciones del formulario.
+- `cypress/`: Carpeta principal de Cypress que contiene archivos de prueba y configuraciones.
+  - `e2e/`:
+    - `testclase6.cy.js`: Archivo con pruebas para reserva de habitaciones y formulario de contacto.
+    - `pruebasDeBug.cy.js`: Archivo para pruebas adicionales y depuración.
+  - `support/`:
+    - `commands.js`: Archivo con comandos personalizados para pruebas.
+  - `fixtures/`:
+    - `errorMessages.json`: Archivo con mensajes de error para validaciones del formulario.
 
-## Comandos Personalizados
+## 🛠️ Comandos Personalizados
 
-- **`completarFormularioContacto(nombre, email, telefono, asunto, mensaje)`**
-: Completa el formulario de contacto con los datos proporcionados.
-- **`enviarFormularioContacto()`**
-: Envía el formulario de contacto.
-- **`verificarMensaje(selector, mensajeEsperado)`**
-: Verifica que un mensaje específico esté visible.
-- **`hacerReservaHabitacion(nombre, apellido, email, telefono)`**
-: Realiza una reserva de habitación y maneja la lógica de fechas no disponibles.
+- `completarFormularioContacto(nombre, email, telefono, asunto, mensaje)`: Completa el formulario de contacto con los datos proporcionados.
+- `enviarFormularioContacto()`: Envía el formulario de contacto.
+- `verificarMensaje(selector, mensajeEsperado)`: Verifica que un mensaje específico esté visible.
+- `hacerReservaHabitacion(nombre, apellido, email, telefono)`: Realiza una reserva de habitación y maneja la lógica de fechas no disponibles.
 
-## Pruebas Realizadas
+## 🧪 Pruebas Realizadas
+
+### Pruebas de Interfaz del Sitio Web
+
+- Verificación de Información del Hotel
+- Verificación de Imágenes Visibles
+- Verificación de la Descripción del Hotel
 
 ### Pruebas de Formulario de Contacto
 
-- **Formulario de contacto exitoso**
-: Verifica que el formulario se complete y envíe correctamente.
-- **Errores en el formulario**
-: Verifica que los mensajes de error se muestren para datos inválidos.
+- Formulario de Contacto Exitoso
+- Errores en el Formulario
 
 ### Pruebas de Reserva de Habitación
 
-- **Reserva exitosa**
-: Verifica que el proceso de reserva funcione con datos válidos.
-- **Errores en la reserva**
-:
-  - **Nombre con caracteres alfanuméricos**
-: Verifica que el campo Nombre no acepte caracteres alfanuméricos.
-  - **Apellido con caracteres alfanuméricos**
-: Verifica que el campo Apellido no acepte caracteres alfanuméricos.
-  - **Teléfono con caracteres alfabéticos**
-: Verifica que el campo Teléfono no acepte caracteres alfabéticos.
+- Reserva Exitosa
+- Errores en la Reserva:
+  - Nombre con caracteres alfanuméricos
+  - Apellido con caracteres alfanuméricos
+  - Teléfono con caracteres alfabéticos
+  - Reserva con datos incompletos
 
-## Configuración de Cypress
+### Pruebas de Validación de Mensajes
 
-1. **Instalar dependencias**
+- Mensaje Enviado Exitosamente
 
+## ✅ Actividad para las Pruebas del Sitio Web
+
+- [x] Debe verificar que la información del hotel esté presente
+- [x] Debe asegurar que haya al menos una imagen visible
+- [x] Debe confirmar que el texto de la descripción del hotel sea el esperado
+- [x] Debe hacer una reserva de habitación con éxito
+- [x] Debe devolver un error si se envían datos incompletos
+- [x] Debe validar que el mensaje haya sido enviado exitosamente
+
+# 📝 REPORTE DE BUGS EN TRELLO
+
+## 🔍 Gestión de Bugs y Mejoras
+
+Los bugs y mejoras encontrados durante la automatización se han reportado utilizando una plantilla de reporte de bugs proporcionada en clase. Este enfoque nos permite:
+
+- 📊 Tener una visión clara del estado de nuestras pruebas
+- 🔄 Facilitar el seguimiento y la priorización de problemas
+- 👥 Mejorar la colaboración entre el equipo de QA y desarrollo
+
+### 🔗 Acceso al Tablero de Trello
+
+Puedes ver el tablero de Trello con los detalles de los bugs reportados en el siguiente enlace:
+
+[**🔗 Trello - Automatización con Cypress (Acceso público)**](URL_DEL_TABLERO_TRELLO)
+
+### 📄 Ejemplo de Reporte de Bug
+
+**Título / Pantalla**: Verificar que el campo Nombre no acepta caracteres alfanuméricos.
+
+**Ambiente de Testing**: 
+- Sistema Operativo: Windows 10 Pro 
+- Navegador: Google Chrome 
+- Versión: 116.0.5845.111 (64-bit)
+
+**URL**: https://automationintesting.online/
+
+**Precondiciones**: El usuario debe estar en la página de reserva de habitaciones.
+
+**Datos de Prueba**:
+- Nombre: "Jaime123"
+- Apellido: "Lozano"
+- Email: "jlozanog@outlook.es"
+- Teléfono: "94932776300"
+
+**Pasos para Reproducir**:
+1. Ingresar a la página https://automationintesting.online/.
+2. Completar el campo Nombre con "Jaime123".
+3. Completar los demás campos del formulario con datos válidos.
+4. Hacer clic en el botón "Reservar".
+5. Verificar si se muestra un mensaje de error para el campo Nombre.
+
+**Resultado Esperado**: Debe mostrarse un mensaje de error indicando que el campo Nombre no debe contener caracteres alfanuméricos.
+
+**Resultado Obtenido**: No se mostró ningún mensaje de error cuando se introdujeron caracteres alfanuméricos en el campo Nombre.
+
+**Evidencia**: [Adjuntar capturas de pantalla o videos del error]
+
+**Observaciones**:
+- El campo Nombre no valida correctamente los caracteres alfanuméricos.
+- El sistema debería mostrar un mensaje de error adecuado cuando se ingresan caracteres no permitidos.
+
+## ⚙️ Configuración de Cypress
+
+1. Instalar dependencias
+```bash
 npm install cypress
 npm install cypress-real-events @4tw/cypress-drag-drop
+```
+
+2. Importar comandos y soportes en Cypress
+```javascript
+import 'cypress-real-events/support';
+import '@4tw/cypress-drag-drop';
+import './commands';
+```
+
+## 🚀 Cómo Ejecutar las Pruebas
+
+Para ejecutar las pruebas, utiliza el siguiente comando en tu terminal:
+
+```bash
+npx cypress open
+```
+
+Esto abrirá la interfaz gráfica de Cypress donde puedes seleccionar y ejecutar las pruebas.
+
+## 📁 Uso de .gitignore
+
+Para evitar subir la carpeta `node_modules` y otros archivos innecesarios al repositorio, asegúrate de que el archivo `.gitignore` esté configurado correctamente. Aquí tienes un ejemplo de lo que debe incluirse en tu `.gitignore`:
+
+```
+# Node modules
+node_modules/
+```
+
+Este archivo .gitignore asegurará que las dependencias instaladas y otros archivos generados automáticamente no se suban al repositorio, manteniendo tu repositorio limpio y ligero.
+
+## 📁 Documentación Adicional
+
+### 📊 Casos de Prueba y Evidencias
+
+Hemos creado una carpeta en Google Drive que contiene información adicional sobre el proyecto, incluyendo:
+
+- 📹 Videos de las pruebas ejecutadas
+- 📸 Imágenes de las pruebas
+- 📑 Archivo Excel con los casos de prueba detallados
+
+Puedes acceder a esta documentación en el siguiente enlace:
+
+[**🔗 Google Drive - Documentación de Pruebas**](https://drive.google.com/drive/folders/1pdA8ZfBjJvdWzaTqf-371iqAVbRdjwqB?usp=sharing)
+
+Te recomendamos revisar esta documentación para obtener una visión más completa del alcance y los resultados de nuestras pruebas automatizadas.
+
+## 📹 Videos de Pruebas
+
+Aquí están los enlaces directos a los videos de las pruebas realizadas:
+
+- [Video 1](https://drive.google.com/file/d/151pnk0SzuJ-uDA3bg3npXpt8hqHp0SM6/view?usp=sharing)
+- [Video 2](https://drive.google.com/file/d/1SD6mrYqobLZ7nhk7RKhnfKsmI7VBJ2Bh/view?usp=sharing)
+- [Video 3](https://drive.google.com/file/d/1nD1I0Ema3u1oc6gOWLtHsfbIcU5MZR5h/view?usp=sharing)
+- [Video 4](https://drive.google.com/file/d/1cY22sNXnQprMAFUA1cc29VqqfC8R7Y_P/view?usp=sharing)
+
+Estos videos muestran la ejecución de las pruebas automatizadas y pueden ser útiles para entender el funcionamiento del proyecto y los casos de prueba implementados.
+
+
+
+
